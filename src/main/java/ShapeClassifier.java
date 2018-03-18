@@ -1,5 +1,3 @@
-package analysis;
-
 public class ShapeClassifier {
 	private int badGuesses; 
 	private String[] threeParamGuesses = {"Equilateral", "Isosceles", "Scalene"};

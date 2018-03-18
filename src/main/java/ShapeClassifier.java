@@ -1,4 +1,4 @@
-package analysis;
+//package analysis;
 
 public class ShapeClassifier {
 	private int badGuesses; 

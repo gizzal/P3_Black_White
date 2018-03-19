@@ -48,7 +48,7 @@ public class ShapeClassifierWhiteBoxTest {
     @org.junit.Test
     public void evaluateGuess6() throws Exception {
         ShapeClassifier sc = new ShapeClassifier();
-        String result = sc.evaluateGuess("Ellipse,Large,Yes,200,100");
+        String result = sc.evaluateGuess("Ellipse,Large,Yes,200,102");
         assertEquals("Yes", result);
     }
 

@@ -1,6 +1,11 @@
+import org.junit.Rule;
+import org.junit.contrib.java.lang.system.ExpectedSystemExit;
+
 import static org.junit.Assert.*;
 
 public class ShapeClassifierWhiteBoxTest {
+    @Rule
+    public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     @org.junit.Before
     public void setUp() throws Exception {
@@ -124,9 +129,8 @@ public class ShapeClassifierWhiteBoxTest {
         String result2 = sc.evaluateGuess("Scalene,Large,Yes,100,100,100,100");
         assertEquals("No", result2);
 
-        // I don't now how to check that the method is finishing with System.exit(1)
-//        String result3 = sc.evaluateGuess("Scalene,Large,Yes,100,100,100,100");
-//        assertEquals("0", result3);
+        exit.expectSystemExitWithStatus(1);
+        sc.evaluateGuess("Scalene,Large,Yes,100,100,100,100");
     }
 
 }
